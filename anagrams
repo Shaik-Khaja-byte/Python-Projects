@@ -1,0 +1,12 @@
+def ans(string):
+    anagrams={}
+    for word in string:
+        key = ''.join(sorted(word))
+        if key in anagrams:
+            anagrams[key].append(word)
+        else:
+            anagrams[key]=[word]
+    return list(anagrams.keys()), list(anagrams.values())
+user_input=input()
+words=user_input.split()
+print(ans(words))
